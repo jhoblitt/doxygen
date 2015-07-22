@@ -8,7 +8,7 @@ Summary: A documentation system for C/C++
 Name:    %{?scl_prefix}doxygen
 Epoch:   1
 Version: 1.8.9.1
-Release: 4%{?dist}
+Release: 5%{?dist}
 
 # No version is specified.
 License: GPL+
@@ -127,6 +127,9 @@ desktop-file-install \
 
 
 %changelog
+* Wed Jul 22 2015 Joshua Hoblitt <josh@hoblitt.com> 1.8.9.1-5
+- add source tarball (josh@hoblitt.com)
+
 * Wed Jul 22 2015 Joshua Hoblitt <josh@hoblitt.com> 1.8.9.1-4
 - new package built with tito
 
