@@ -8,12 +8,12 @@ Summary: A documentation system for C/C++
 Name:    %{?scl_prefix}doxygen
 Epoch:   1
 Version: 1.8.9.1
-Release: 5%{?dist}
+Release: 6%{?dist}
 
 # No version is specified.
 License: GPL+
 Url: http://www.stack.nl/~dimitri/doxygen/index.html
-Source0: ftp://ftp.stack.nl/pub/users/dimitri/%{name}-%{version}.src.tar.gz
+Source0: ftp://ftp.stack.nl/pub/users/dimitri/%{pkg_name}-%{version}.src.tar.gz
 # this icon is part of kdesdk
 Source1: doxywizard.png
 Source2: doxywizard.desktop
@@ -127,6 +127,9 @@ desktop-file-install \
 
 
 %changelog
+* Wed Jul 22 2015 Joshua Hoblitt <josh@hoblitt.com> 1.8.9.1-6
+- 
+
 * Wed Jul 22 2015 Joshua Hoblitt <josh@hoblitt.com> 1.8.9.1-5
 - add source tarball (josh@hoblitt.com)
 
