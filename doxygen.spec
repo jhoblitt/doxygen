@@ -8,7 +8,7 @@ Summary: A documentation system for C/C++
 Name:    %{?scl_prefix}doxygen
 Epoch:   1
 Version: 1.8.9.1
-Release: 8%{?dist}
+Release: 9%{?dist}
 
 # No version is specified.
 License: GPL+
@@ -29,7 +29,11 @@ BuildRequires: tex(latex)
 # arg, no safe/virtual provides for these
 BuildRequires: /usr/bin/epstopdf
 # Work around strange dependences in epstopdf packages (RHBZ#991699)
+%if 0%{?el6}
 BuildRequires: texlive-utils
+%else
+BuildRequires: texlive-epstopdf
+%endif
 BuildRequires: ghostscript
 BuildRequires: gettext
 BuildRequires: flex
@@ -60,7 +64,7 @@ Requires: tex(multirow.sty)
 Requires: tex(sectsty.sty)
 Requires: tex(tocloft.sty)
 Requires: tex(xtab.sty)
-Requires: texlive-utils
+Requires: texlive-epstopdf-bin
 %endif
 %description latex
 %{summary}.
@@ -127,6 +131,9 @@ desktop-file-install \
 
 
 %changelog
+* Wed Jul 22 2015 Joshua Hoblitt <josh@hoblitt.com> 1.8.9.1-9
+- 
+
 * Wed Jul 22 2015 Joshua Hoblitt <josh@hoblitt.com> 1.8.9.1-8
 - 
 
