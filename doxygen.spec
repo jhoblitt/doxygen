@@ -1,14 +1,14 @@
 %global scl lsst-stack1
 
 %{?scl:%global _scl_prefix /opt/lsst}
-%{?scl:%scl_package scons}
+%{?scl:%scl_package doxygen}
 %{!?scl:%global pkg_name %{name}}
 
 Summary: A documentation system for C/C++
 Name:    %{?scl_prefix}doxygen
 Epoch:   1
 Version: 1.8.9.1
-Release: 6%{?dist}
+Release: 7%{?dist}
 
 # No version is specified.
 License: GPL+
@@ -127,6 +127,9 @@ desktop-file-install \
 
 
 %changelog
+* Wed Jul 22 2015 Joshua Hoblitt <josh@hoblitt.com> 1.8.9.1-7
+- 
+
 * Wed Jul 22 2015 Joshua Hoblitt <josh@hoblitt.com> 1.8.9.1-6
 - 
 
