@@ -5,7 +5,7 @@
 %{!?scl:%global pkg_name %{name}}
 
 Summary: A documentation system for C/C++
-Name:    %{?scl_prefix}scons
+Name:    %{?scl_prefix}doxygen
 Epoch:   1
 Version: 1.8.9.1
 Release: 4%{?dist}
@@ -127,6 +127,9 @@ desktop-file-install \
 
 
 %changelog
+* Wed Jul 22 2015 Joshua Hoblitt <josh@hoblitt.com> 1.8.9.1-4
+- new package built with tito
+
 * Wed Jul 22 2015 Joshua Hoblitt <josh@hoblitt.com> 1.8.9.1-4
 - new package built with tito
 
