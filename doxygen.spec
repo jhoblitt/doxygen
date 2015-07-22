@@ -1,5 +1,11 @@
+%global scl lsst-stack1
+
+%{?scl:%global _scl_prefix /opt/lsst}
+%{?scl:%scl_package scons}
+%{!?scl:%global pkg_name %{name}}
+
 Summary: A documentation system for C/C++
-Name:    doxygen
+Name:    %{?scl_prefix}scons
 Epoch:   1
 Version: 1.8.9.1
 Release: 4%{?dist}
@@ -16,13 +22,14 @@ Patch1: doxygen-1.8.9.1-config.patch
 Patch2: doxygen-1.8.9.1-html_timestamp_default_false.patch 
 Patch3: doxygen-bz#1198355.patch
 
+BuildRequires: %{?scl_prefix}build
 BuildRequires: perl
 BuildRequires: tex(dvips)
 BuildRequires: tex(latex)
 # arg, no safe/virtual provides for these
 BuildRequires: /usr/bin/epstopdf
 # Work around strange dependences in epstopdf packages (RHBZ#991699)
-BuildRequires: texlive-epstopdf
+BuildRequires: texlive-utils
 BuildRequires: ghostscript
 BuildRequires: gettext
 BuildRequires: flex
@@ -53,7 +60,7 @@ Requires: tex(multirow.sty)
 Requires: tex(sectsty.sty)
 Requires: tex(tocloft.sty)
 Requires: tex(xtab.sty)
-Requires: texlive-epstopdf-bin
+Requires: texlive-utils
 %endif
 %description latex
 %{summary}.
@@ -120,6 +127,9 @@ desktop-file-install \
 
 
 %changelog
+* Wed Jul 22 2015 Joshua Hoblitt <josh@hoblitt.com> 1.8.9.1-4
+- new package built with tito
+
 * Wed Jun 17 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1:1.8.9.1-4
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_23_Mass_Rebuild
 
