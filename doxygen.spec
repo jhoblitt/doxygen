@@ -8,7 +8,7 @@ Summary: A documentation system for C/C++
 Name:    %{?scl_prefix}doxygen
 Epoch:   1
 Version: 1.8.9.1
-Release: 9%{?dist}
+Release: 10%{?dist}
 
 # No version is specified.
 License: GPL+
@@ -71,7 +71,7 @@ Requires: texlive-epstopdf-bin
 
 
 %prep
-%setup -q
+%setup -q -n %{pkg_name}-%{version}
 
 %patch1 -p1 -b .config
 %patch2 -p1 -b .html_timestamp_default_false
@@ -131,6 +131,9 @@ desktop-file-install \
 
 
 %changelog
+* Wed Jul 22 2015 Joshua Hoblitt <josh@hoblitt.com> 1.8.9.1-10
+- 
+
 * Wed Jul 22 2015 Joshua Hoblitt <josh@hoblitt.com> 1.8.9.1-9
 - 
 
