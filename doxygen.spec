@@ -7,13 +7,13 @@
 
 # https://fedoraproject.org/wiki/Packaging:Python#Bytecompiling_with_the_correct_python_version
 # Turn off the brp-python-bytecompile script
-%global __os_install_post %(echo '%{__os_install_post}' | sed -e 's!/usr/lib[^[:space:]]*/brp-python-bytecompile[[:space:]].*$!!g')
+#%global __os_install_post %(echo '%{__os_install_post}' | sed -e 's!/usr/lib[^[:space:]]*/brp-python-bytecompile[[:space:]].*$!!g')
 
 Summary: A documentation system for C/C++
 Name:    %{?scl_prefix}doxygen
 Epoch:   1
 Version: 1.8.9.1
-Release: 14%{?dist}
+Release: 15%{?dist}
 
 # No version is specified.
 License: GPL+
@@ -140,6 +140,9 @@ desktop-file-install \
 
 
 %changelog
+* Thu Jul 23 2015 Joshua Hoblitt <josh@hoblitt.com> 1.8.9.1-15
+- 
+
 * Thu Jul 23 2015 Joshua Hoblitt <josh@hoblitt.com> 1.8.9.1-14
 - 
 
