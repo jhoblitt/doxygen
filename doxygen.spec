@@ -8,7 +8,7 @@ Summary: A documentation system for C/C++
 Name:    %{?scl_prefix}doxygen
 Epoch:   1
 Version: 1.8.9.1
-Release: 11%{?dist}
+Release: 12%{?dist}
 
 # No version is specified.
 License: GPL+
@@ -38,8 +38,8 @@ BuildRequires: gettext
 BuildRequires: flex
 BuildRequires: bison
 BuildRequires: desktop-file-utils
-%{?scl:BuildRequires: %{scl}-build %{scl}-runtime}
-%{?scl:Requires: %{scl}-runtime}
+%{?scl:BuildRequires: %{scl_prefix}build %{scl_prefix}runtime}
+%{?scl:Requires: %{scl_prefix}runtime}
 
 
 %description
@@ -133,6 +133,9 @@ desktop-file-install \
 
 
 %changelog
+* Thu Jul 23 2015 Joshua Hoblitt <josh@hoblitt.com> 1.8.9.1-12
+- 
+
 * Thu Jul 23 2015 Joshua Hoblitt <josh@hoblitt.com> 1.8.9.1-11
 - 
 
