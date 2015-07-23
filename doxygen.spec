@@ -8,7 +8,7 @@ Summary: A documentation system for C/C++
 Name:    %{?scl_prefix}doxygen
 Epoch:   1
 Version: 1.8.9.1
-Release: 10%{?dist}
+Release: 11%{?dist}
 
 # No version is specified.
 License: GPL+
@@ -22,7 +22,6 @@ Patch1: doxygen-1.8.9.1-config.patch
 Patch2: doxygen-1.8.9.1-html_timestamp_default_false.patch 
 Patch3: doxygen-bz#1198355.patch
 
-BuildRequires: %{?scl_prefix}build
 BuildRequires: perl
 BuildRequires: tex(dvips)
 BuildRequires: tex(latex)
@@ -39,6 +38,9 @@ BuildRequires: gettext
 BuildRequires: flex
 BuildRequires: bison
 BuildRequires: desktop-file-utils
+%{?scl:BuildRequires: %{scl}-build %{scl}-runtime}
+%{?scl:Requires: %{scl}-runtime}
+
 
 %description
 Doxygen can generate an online class browser (in HTML) and/or a
@@ -131,6 +133,9 @@ desktop-file-install \
 
 
 %changelog
+* Thu Jul 23 2015 Joshua Hoblitt <josh@hoblitt.com> 1.8.9.1-11
+- 
+
 * Wed Jul 22 2015 Joshua Hoblitt <josh@hoblitt.com> 1.8.9.1-10
 - 
 
